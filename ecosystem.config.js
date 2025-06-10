@@ -2,10 +2,16 @@ module.exports = {
   apps: [{
     name: 'api-server',
     script: 'index.js',
-    cwd: '/Users/lishengmin/WeChatProjects/applet/Api',
+    cwd: '/home/Api',
     instances: 1,
     autorestart: true,
-    watch: false,
+    watch: true,              // 启用监听
+    ignore_watch: [           // 忽略的目录
+      "node_modules",
+      "logs"
+    ],
+    watch_delay: 1000,        // 变化检测延迟（毫秒）
+    autorestart: true,        // 文件变化时自动重启
     max_memory_restart: '1G',
     env: {
       NODE_ENV: 'development',
