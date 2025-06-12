@@ -16,9 +16,34 @@ var httpsServer = https.createServer(credentials, app);
 */
 
 //开启token鉴权 - 已禁用，接口无需登录验证
-// app.use(expressjwt({ secret: "moyc^-^", algorithms: ["HS256"] }).unless({
-//     path: [/\/api\//, /\/images\//]
-// }))
+// JWT认证中间件 - 保护后台管理接口
+app.use(expressjwt({ 
+    secret: "moyc^-^", 
+    algorithms: ["HS256"],
+    requestProperty: 'user', // 这是默认值，但明确指定
+    getToken: function fromHeaderOrQuerystring (req) {
+        if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
+            return req.headers.authorization.split(' ')[1];
+        } else if (req.query && req.query.token) {
+            return req.query.token;
+        }
+        return null;
+    }
+}).unless({
+    path: [
+        // 公开的API路径（不需要认证）
+        /\/api\/tools/, 
+        /\/api\/upload\/image$/,
+        /\/api\/upload\/images$/,
+        /\/api\/userLogin/,
+        /\/api\/userReg/,
+        /\/api\/admin\/login$/,
+        /\/images\//,
+        /\/uploads\//,
+        
+        // 可以添加其他不需要认证的路径
+    ]
+}))
 
 //托管静态资源
 app.use('/images', express.static('./images'))
@@ -27,6 +52,8 @@ app.use('/uploads', express.static('./uploads')) // 静态文件服务for上传�
 //解析请求体
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+
 
 
 //引入路由

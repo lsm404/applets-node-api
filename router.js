@@ -23,8 +23,10 @@ app.use('/modify', require('./loginReg/modify/user.js'))
 //前台获取信息类，不使用token，包含轮播图、文章
 app.use('/api', require('./system/get.js'))
 //工具相关接口，不使用token
-app.use('/api', require('./system/tools.js'))
+// app.use('/api', require('./system/tools.js'))  // 删除旧的tools接口
 app.use('/api', require('./system/upload.js')) //图片上传
+app.use('/api', require('./system/admin-auth.js')) //管理员登录接口
+app.use('/api', require('./system/tools-crud.js')) //工具完整CRUD接口
 //后台系统信息管理类，需要使用token
 app.use('/admin', require('./system/swiper.js')) //轮播图
 app.use('/admin', require('./system/article.js')) //文章

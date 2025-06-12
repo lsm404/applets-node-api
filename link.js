@@ -2,13 +2,13 @@
  * @Author: lishengmin shengminfang@foxmail.com
  * @Date: 2024-12-20 16:00:01
  * @LastEditors: lishengmin shengminfang@foxmail.com
- * @LastEditTime: 2025-06-10 14:29:52
+ * @LastEditTime: 2025-06-11 11:54:08
  * @FilePath: /applet/Api/link.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 const mysql = require('mysql')
 const config = {
-    host: 'localhost',
+    host: '120.46.28.146',
     user: 'db',
     password: 'admin123',
     database: 'db',

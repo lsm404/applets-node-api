@@ -1,3 +1,11 @@
+/*
+ * @Author: lishengmin shengminfang@foxmail.com
+ * @Date: 2024-12-20 16:00:01
+ * @LastEditors: lishengmin shengminfang@foxmail.com
+ * @LastEditTime: 2025-06-11 11:45:20
+ * @FilePath: /applet/Api/user/user.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 //用户信息部分
 const express = require('express');
 const router = express.Router();
@@ -18,10 +26,7 @@ const tw = (res, code, msg) => {
 router.get('/admin_info', (req, res) => {
     // 从请求头中获取 Token
   const token = req.headers['token'] ? req.headers['token'] : null;
-  const sql1 = `SELECT id,username,name,state FROM users where token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTczNDY4NjQzNiwiZXhwIjoxNzM1MjkxMjM2fQ.mKLKlHas84DBANDJ0EfZvKXHSlSLVw67mUYX4E9cjZc'`;
-  db.query(sql1, (err, data) => {
-    console.log('data1', data)
-})
+  // 已删除无用的测试代码
   console.log(token, req.headers)
     const sql = `SELECT id,username,name,state,permissions,token FROM users where token = '${token}'`;
     console.log(sql)
