@@ -2497,3 +2497,111 @@ SyntaxError: missing ) after argument list
 2025-06-12T11:20:53: 数据库连接成功
 2025-06-12T11:41:33: Success by http://127.0.0.1:8088
 2025-06-12T11:41:33: 数据库连接成功
+2025-06-12T14:01:51: 查询工具总数失败: Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:217:20)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/tools-crud.js:52:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  errno: -54,
+  code: 'ECONNRESET',
+  syscall: 'read',
+  fatal: true
+}
+2025-06-12T14:01:51: 查询工具总数失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/tools-crud.js:52:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-12T14:01:58: 查询工具总数失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/tools-crud.js:52:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-12T14:02:23: 查询工具总数失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/tools-crud.js:52:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-12T14:02:23: 查询工具总数失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/tools-crud.js:52:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-12T14:44:55: 查询工具总数失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/tools-crud.js:52:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-12T14:57:22: 获取管理员信息失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/admin-auth.js:98:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-12T14:59:39: Success by http://127.0.0.1:8088
+2025-06-12T14:59:39: 数据库连接成功
+2025-06-12T15:04:32: Success by http://127.0.0.1:8088
+2025-06-12T15:04:32: 数据库连接成功
+2025-06-12T15:07:24: Success by http://127.0.0.1:8088
+2025-06-12T15:07:24: 数据库连接成功

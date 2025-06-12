@@ -2,6 +2,8 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+// 引入服务器配置
+const serverConfig = require('../config/server');
 const router = express.Router();
 
 // 配置multer存储
@@ -55,8 +57,8 @@ router.post('/upload/image', upload.single('image'), (req, res) => {
       });
     }
 
-    // 生成可访问的URL
-    const imageUrl = `http://127.0.0.1:8088/uploads/images/${req.file.filename}`;
+    // 使用动态配置生成URL
+    const imageUrl = serverConfig.getUploadUrl(req.file.filename);
     
     res.json({
       code: 200,
@@ -93,7 +95,7 @@ router.post('/upload/images', upload.array('images', 5), (req, res) => {
       filename: file.filename,
       originalName: file.originalname,
       size: file.size,
-      url: `http://127.0.0.1:8088/uploads/images/${file.filename}`,
+      url: serverConfig.getUploadUrl(file.filename),
       uploadTime: new Date().toISOString()
     }));
     
@@ -170,7 +172,7 @@ router.get('/upload/image/:filename/info', (req, res) => {
       data: {
         filename: filename,
         size: stats.size,
-        url: `http://127.0.0.1:8088/uploads/images/${filename}`,
+        url: serverConfig.getUploadUrl(filename),
         createTime: stats.birthtime,
         modifyTime: stats.mtime
       }
