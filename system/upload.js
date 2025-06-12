@@ -2,14 +2,14 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-// 引入服务器配置
-const serverConfig = require('../config/server');
+// 引入统一配置
+const config = require('../config/index');
 const router = express.Router();
 
 // 配置multer存储
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const uploadPath = path.join(__dirname, '../uploads/images');
+    const uploadPath = path.join(__dirname, '../../uploads/images');
     
     // 确保目录存在
     if (!fs.existsSync(uploadPath)) {
@@ -43,7 +43,7 @@ const upload = multer({
   storage: storage,
   fileFilter: fileFilter,
   limits: {
-    fileSize: 5 * 1024 * 1024, // 限制文件大小为5MB
+    fileSize: config.upload.maxSize,
   }
 });
 
@@ -57,8 +57,8 @@ router.post('/upload/image', upload.single('image'), (req, res) => {
       });
     }
 
-    // 使用动态配置生成URL
-    const imageUrl = serverConfig.getUploadUrl(req.file.filename);
+    // 使用统一配置生成URL
+    const imageUrl = config.utils.getFileUrl(req.file.filename);
     
     res.json({
       code: 200,
@@ -95,7 +95,7 @@ router.post('/upload/images', upload.array('images', 5), (req, res) => {
       filename: file.filename,
       originalName: file.originalname,
       size: file.size,
-      url: serverConfig.getUploadUrl(file.filename),
+      url: config.utils.getFileUrl(file.filename),
       uploadTime: new Date().toISOString()
     }));
     
@@ -172,7 +172,7 @@ router.get('/upload/image/:filename/info', (req, res) => {
       data: {
         filename: filename,
         size: stats.size,
-        url: serverConfig.getUploadUrl(filename),
+        url: config.utils.getFileUrl(filename),
         createTime: stats.birthtime,
         modifyTime: stats.mtime
       }

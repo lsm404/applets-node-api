@@ -103,7 +103,7 @@ router.get('/tools/:id', (req, res) => {
 router.post('/tools', (req, res) => {
     const { title, size, desc, version, iconClass, iconPath, link, category = 0, status = 1 } = req.body;
     
-    if (!title || !desc || !link) {
+    if (!title || !link) {
         return respond(res, 400, '工具名称、描述和链接不能为空');
     }
     
@@ -125,7 +125,7 @@ router.put('/tools/:id', (req, res) => {
     const { id } = req.params;
     const { title, size, desc, version, iconClass, iconPath, link, category, status } = req.body;
     
-    if (!title || !desc || !link) {
+    if (!title || !link) {
         return respond(res, 400, '工具名称、描述和链接不能为空');
     }
     
