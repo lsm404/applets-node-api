@@ -64,7 +64,7 @@ app.use(require('./router.js'));
 app.use((err, req, res, next) => {
     //token验证为通过
     if (err.name === 'UnauthorizedError') {
-        res.send({ code: 403, msg: '非法请求' })
+        res.send({ code: 912, msg: '登录身份已失效，请重新登录' })
         //数据库错误
     } else if (err.name == 'DatabaseError') {
         res.send({ code: err.status, msg: err.message })
