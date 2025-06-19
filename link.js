@@ -11,43 +11,33 @@ const appConfig = require('./config/index');
 const config = appConfig.database;
 let db;
 
-//当连接关闭时，重新连接数据库
-function handleDisconnect() {
-    db = mysql.createConnection(config);
-    
-    db.connect(function(err) {
-        if (err) {
-            console.log('数据库连接失败: ', err);
-            console.log('将在2秒后重试...');
-            setTimeout(handleDisconnect, 2000);
-        } else {
-            console.log('数据库连接成功');
-        }
-    });
-    
-    db.on('error', function(err) {
-        console.log('数据库连接错误: ', err);
-        if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-            console.log('数据库连接丢失，正在重新连接...');
-            handleDisconnect();
-        } else {
-            throw err;
-        }
-    });
-}
+// 创建连接池而不是单一连接
+const pool = mysql.createPool({
+    ...config,
+    connectionLimit: 10,
+    acquireTimeout: 30000,
+    waitForConnections: true
+});
 
-// 尝试初始化数据库连接，但不阻塞服务启动
-try {
-    handleDisconnect();
-} catch (error) {
-    console.log('数据库连接失败，但服务仍将启动: ', error.message);
-}
-
-
-
-
-module.exports = db;
-
-
-
-
+// 导出查询方法而不是连接对象
+module.exports = {
+    query: function(sql, params, callback) {
+        pool.getConnection(function(err, connection) {
+            if (err) {
+                console.log('获取数据库连接失败: ', err);
+                return callback(err);
+            }
+            
+            connection.query(sql, params, function(error, results, fields) {
+                // 释放连接
+                connection.release();
+                
+                // 回调返回结果
+                if (error) {
+                    return callback(error);
+                }
+                callback(null, results, fields);
+            });
+        });
+    }
+};

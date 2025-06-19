@@ -27,6 +27,7 @@ app.use('/api', require('./system/get.js'))
 app.use('/api', require('./system/upload.js')) //图片上传
 app.use('/api', require('./system/admin-auth.js')) //管理员登录接口
 app.use('/api', require('./system/tools-crud.js')) //工具完整CRUD接口
+app.use('/api', require('./system/categories-crud.js')) //工具分类CRUD接口
 //后台系统信息管理类，需要使用token
 app.use('/admin', require('./system/swiper.js')) //轮播图
 app.use('/admin', require('./system/article.js')) //文章

@@ -33,6 +33,7 @@ app.use(expressjwt({
     path: [
         // 公开的API路径（不需要认证）
         /\/api\/tools/, 
+        /\/api\/categories/,
         /\/api\/upload\/image$/,
         /\/api\/upload\/images$/,
         /\/api\/userLogin/,

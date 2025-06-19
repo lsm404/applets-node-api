@@ -80,6 +80,78 @@ router.get('/tools', (req, res) => {
     });
 });
 
+// 搜索工具接口 (必须在 /tools/:id 之前定义，避免路由冲突)
+router.get('/tools/search', (req, res) => {
+    const { keyword, page = 1, pageSize = 10 } = req.query;
+    
+    // 验证搜索关键词
+    if (!keyword || keyword.trim() === '') {
+        return respond(res, 400, '搜索关键词不能为空');
+    }
+    
+    const searchKeyword = `%${keyword.trim()}%`;
+    const offset = (page - 1) * pageSize;
+    
+    // 搜索SQL，支持标题、描述、版本号模糊搜索，并且只搜索启用状态的工具
+    const searchSql = `
+        SELECT * FROM tools 
+        WHERE status = 1 AND (
+            title LIKE ? OR 
+            \`desc\` LIKE ? OR 
+            version LIKE ?
+        ) 
+        ORDER BY 
+            CASE 
+                WHEN title LIKE ? THEN 1
+                WHEN \`desc\` LIKE ? THEN 2
+                ELSE 3
+            END,
+            createTime DESC
+        LIMIT ? OFFSET ?
+    `;
+    
+    // 统计SQL
+    const countSql = `
+        SELECT COUNT(*) as count FROM tools 
+        WHERE status = 1 AND (
+            title LIKE ? OR 
+            \`desc\` LIKE ? OR 
+            version LIKE ?
+        )
+    `;
+    
+    const searchParams = [searchKeyword, searchKeyword, searchKeyword, searchKeyword, searchKeyword, parseInt(pageSize), parseInt(offset)];
+    const countParams = [searchKeyword, searchKeyword, searchKeyword];
+    
+    // 先查询总数
+    db.query(countSql, countParams, (err, countResult) => {
+        if (err) {
+            console.error('搜索工具总数失败:', err);
+            return res.send(sqlErr);
+        }
+        
+        const total = countResult[0].count;
+        
+        // 查询搜索结果
+        db.query(searchSql, searchParams, (err, searchResult) => {
+            if (err) {
+                console.error('搜索工具失败:', err);
+                return res.send(sqlErr);
+            }
+            
+            res.send({
+                code: 200,
+                msg: '搜索成功',
+                data: searchResult,
+                count: total,
+                keyword: keyword,
+                page: parseInt(page),
+                pageSize: parseInt(pageSize)
+            });
+        });
+    });
+});
+
 // 获取单个工具详情
 router.get('/tools/:id', (req, res) => {
     const { id } = req.params;

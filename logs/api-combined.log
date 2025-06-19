@@ -2609,3 +2609,533 @@ SyntaxError: missing ) after argument list
 2025-06-13T09:15:39: 数据库连接成功
 2025-06-13T09:19:36: Success by http://127.0.0.1:8088
 2025-06-13T09:19:36: 数据库连接成功
+2025-06-13T14:29:22: 获取管理员信息失败: Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:217:20)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/admin-auth.js:98:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  errno: -54,
+  code: 'ECONNRESET',
+  syscall: 'read',
+  fatal: true
+}
+2025-06-13T16:00:18: 获取管理员信息失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/admin-auth.js:98:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-13T16:06:10: 获取管理员信息失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/admin-auth.js:98:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-13T16:06:32: 获取管理员信息失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/admin-auth.js:98:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-13T16:07:28: 获取管理员信息失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/admin-auth.js:98:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-13T16:08:09: 获取管理员信息失败: Error: Cannot enqueue Query after fatal error.
+    at Protocol._validateEnqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:212:16)
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:138:13)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/admin-auth.js:98:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12) {
+  code: 'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  fatal: false
+}
+2025-06-16T15:33:53: Success by http://127.0.0.1:8088
+2025-06-16T15:33:53: 数据库连接成功
+2025-06-16T15:33:54: Success by http://127.0.0.1:8088
+2025-06-16T15:33:54: 数据库连接成功
+2025-06-16T15:35:22: Success by http://127.0.0.1:8088
+2025-06-16T15:35:23: 数据库连接成功
+2025-06-16T15:35:28: Success by http://127.0.0.1:8088
+2025-06-16T15:35:29: 数据库连接成功
+2025-06-16T15:35:32: Success by http://127.0.0.1:8088
+2025-06-16T15:35:32: 数据库连接成功
+2025-06-16T15:39:56: Success by http://127.0.0.1:8088
+2025-06-16T15:39:57: Success by http://127.0.0.1:8088
+2025-06-16T15:39:58: 数据库连接成功
+2025-06-16T15:40:14: 查询分类总数失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:46:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT COUNT(*) as total FROM tool_categories '
+}
+2025-06-16T15:40:38: 查询分类选项失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:81:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT id as value, name as label FROM tool_categories WHERE status = 1 ORDER BY sort_order ASC, id ASC'
+}
+2025-06-16T15:40:47: 查询分类选项失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:81:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT id as value, name as label FROM tool_categories WHERE status = 1 ORDER BY sort_order ASC, id ASC'
+}
+2025-06-16T15:40:47: 查询分类选项失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:81:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT id as value, name as label FROM tool_categories WHERE status = 1 ORDER BY sort_order ASC, id ASC'
+}
+2025-06-16T15:41:11: 查询分类选项失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:81:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT id as value, name as label FROM tool_categories WHERE status = 1 ORDER BY sort_order ASC, id ASC'
+}
+2025-06-16T15:41:52: 查询分类选项失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:81:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT id as value, name as label FROM tool_categories WHERE status = 1 ORDER BY sort_order ASC, id ASC'
+}
+2025-06-16T15:43:55: Success by http://127.0.0.1:8088
+2025-06-16T15:43:55: 数据库连接成功
+2025-06-16T15:52:49: 查询分类选项失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:81:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT id as value, name as label FROM tool_categories WHERE status = 1 ORDER BY sort_order ASC, id ASC'
+}
+2025-06-16T15:52:58: 查询分类选项失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:81:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT id as value, name as label FROM tool_categories WHERE status = 1 ORDER BY sort_order ASC, id ASC'
+}
+2025-06-16T15:53:02: 查询分类总数失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:46:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT COUNT(*) as total FROM tool_categories '
+}
+2025-06-16T15:57:56: 查询分类总数失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:46:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT COUNT(*) as total FROM tool_categories '
+}
+2025-06-16T15:58:23: 查询分类总数失败: Error: ER_NO_SUCH_TABLE: Table 'db.tool_categories' doesn't exist
+    at Sequence._packetToError (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:513:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/mysql/lib/Connection.js:198:25)
+    at /Users/lishengmin/WeChatProjects/applet/Api/system/categories-crud.js:46:8
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/lishengmin/WeChatProjects/applet/Api/node_modules/express/lib/router/index.js:280:10) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'db.tool_categories' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: 'SELECT COUNT(*) as total FROM tool_categories '
+}
+2025-06-16T16:11:57: Success by http://127.0.0.1:8088
+2025-06-16T16:11:57: 数据库连接成功
+2025-06-16T16:11:58: Success by http://127.0.0.1:8088
+2025-06-16T16:11:58: 数据库连接成功
+2025-06-16T16:12:27: Success by http://127.0.0.1:8088
+2025-06-16T16:12:27: 数据库连接成功
+2025-06-16T16:12:28: Success by http://127.0.0.1:8088
+2025-06-16T16:12:28: 数据库连接成功
+2025-06-16T16:13:45: Success by http://127.0.0.1:8088
+2025-06-16T16:13:45: 数据库连接成功
+2025-06-16T17:22:10: Success by http://127.0.0.1:8088
+2025-06-16T17:22:10: 数据库连接成功
+2025-06-17T10:13:37: Success by http://127.0.0.1:8088
+2025-06-17T10:13:38: Success by http://127.0.0.1:8088
+2025-06-17T10:13:38: 数据库连接成功
+2025-06-17T10:13:39: Success by http://127.0.0.1:8088
+2025-06-17T10:13:39: 数据库连接成功
+2025-06-17T10:16:37: Success by http://127.0.0.1:8088
+2025-06-17T10:16:37: 数据库连接成功
+2025-06-17T10:17:47: Success by http://127.0.0.1:8088
+2025-06-17T10:17:47: 数据库连接成功
+2025-06-17T10:17:58: Success by http://127.0.0.1:8088
+2025-06-17T10:18:50: Success by http://127.0.0.1:8088
+2025-06-17T10:19:07: Success by http://127.0.0.1:8088
+2025-06-17T10:21:08: Success by http://127.0.0.1:8088
+2025-06-17T10:21:09: Success by http://127.0.0.1:8088
+2025-06-17T10:27:06: Success by http://127.0.0.1:8088
+2025-06-17T10:27:07: Success by http://127.0.0.1:8088
+2025-06-17T10:33:35: Success by http://127.0.0.1:8088
+2025-06-17T10:33:36: Success by http://127.0.0.1:8088
+2025-06-17T10:33:37: Success by http://127.0.0.1:8088
+2025-06-17T10:38:56: Success by http://127.0.0.1:8088
+2025-06-17T10:47:53: Success by http://127.0.0.1:8088
+2025-06-17T10:47:54: Success by http://127.0.0.1:8088
+2025-06-17T10:52:16: Success by http://127.0.0.1:8088
+2025-06-17T11:06:24: Success by http://127.0.0.1:8088
+2025-06-17T11:06:34: Success by http://127.0.0.1:8088
+2025-06-17T11:11:05: Success by http://127.0.0.1:8088
+2025-06-17T11:17:10: Success by http://127.0.0.1:8088
+2025-06-19T10:46:25: Success by http://127.0.0.1:8088
+2025-06-19T10:49:26: Success by http://127.0.0.1:8088
+2025-06-19T10:52:45: Success by http://127.0.0.1:8088
+2025-06-19T10:55:46: Success by http://127.0.0.1:8088
+2025-06-19T11:00:17: Success by http://127.0.0.1:8088
+2025-06-19T11:04:32: Success by http://127.0.0.1:8088
+2025-06-19T11:07:34: Success by http://127.0.0.1:8088
+2025-06-19T11:12:04: Success by http://127.0.0.1:8088
+2025-06-19T11:12:31: Success by http://127.0.0.1:8088
+2025-06-19T11:18:01: Success by http://127.0.0.1:8088
+2025-06-19T11:36:33: Success by http://127.0.0.1:8088
+2025-06-19T14:04:17: Success by http://127.0.0.1:8088
+2025-06-19T14:08:47: Success by http://127.0.0.1:8088
+2025-06-19T14:13:02: Success by http://127.0.0.1:8088
+2025-06-19T14:13:04: Success by http://127.0.0.1:8088
+2025-06-19T14:18:05: Success by http://127.0.0.1:8088
+2025-06-19T14:21:06: Success by http://127.0.0.1:8088
+2025-06-19T14:21:07: Success by http://127.0.0.1:8088
+2025-06-19T14:21:08: Success by http://127.0.0.1:8088
+2025-06-19T14:21:52: Success by http://127.0.0.1:8088
+2025-06-19T14:25:27: Success by http://127.0.0.1:8088
+2025-06-19T14:25:51: Success by http://127.0.0.1:8088
+2025-06-19T14:26:14: Success by http://127.0.0.1:8088
+2025-06-19T14:28:46: Success by http://127.0.0.1:8088
+2025-06-19T14:30:46: Success by http://127.0.0.1:8088
+2025-06-19T14:30:47: Success by http://127.0.0.1:8088
+2025-06-19T14:44:49: Success by http://127.0.0.1:8088
+2025-06-19T14:44:50: Success by http://127.0.0.1:8088
+2025-06-19T14:48:39: Success by http://127.0.0.1:8088
+2025-06-19T14:48:40: Success by http://127.0.0.1:8088
+2025-06-19T14:48:41: Success by http://127.0.0.1:8088
+2025-06-19T14:52:04: Success by http://127.0.0.1:8088
+2025-06-19T14:52:05: Success by http://127.0.0.1:8088
+2025-06-19T14:55:07: Success by http://127.0.0.1:8088
+2025-06-19T14:59:48: Success by http://127.0.0.1:8088
+2025-06-19T14:59:49: Success by http://127.0.0.1:8088
+2025-06-19T15:07:21: Success by http://127.0.0.1:8088
+2025-06-19T15:12:35: Success by http://127.0.0.1:8088
+2025-06-19T15:16:43: Success by http://127.0.0.1:8088
+2025-06-19T15:19:47: Success by http://127.0.0.1:8088
+2025-06-19T15:19:48: Success by http://127.0.0.1:8088
+2025-06-19T15:22:59: Success by http://127.0.0.1:8088
+2025-06-19T15:23:00: Success by http://127.0.0.1:8088
+2025-06-19T15:28:45: Success by http://127.0.0.1:8088
+2025-06-19T15:34:14: Success by http://127.0.0.1:8088
+2025-06-19T15:34:15: Success by http://127.0.0.1:8088
+2025-06-19T15:38:34: Success by http://127.0.0.1:8088
+2025-06-19T15:43:50: Success by http://127.0.0.1:8088
+2025-06-19T15:43:52: Success by http://127.0.0.1:8088
+2025-06-19T15:43:53: Success by http://127.0.0.1:8088
+2025-06-19T15:47:37: Success by http://127.0.0.1:8088
+2025-06-19T15:47:38: Success by http://127.0.0.1:8088
+2025-06-19T15:47:40: Success by http://127.0.0.1:8088
+2025-06-19T15:47:41: Success by http://127.0.0.1:8088
+2025-06-19T15:47:42: Success by http://127.0.0.1:8088
+2025-06-19T15:52:17: Success by http://127.0.0.1:8088
+2025-06-19T15:59:40: Success by http://127.0.0.1:8088
+2025-06-19T15:59:41: Success by http://127.0.0.1:8088
+2025-06-19T16:03:59: Success by http://127.0.0.1:8088
+2025-06-19T16:04:00: Success by http://127.0.0.1:8088
+2025-06-19T16:04:01: Success by http://127.0.0.1:8088
+2025-06-19T16:09:38: Success by http://127.0.0.1:8088
+2025-06-19T16:09:39: Success by http://127.0.0.1:8088
+2025-06-19T16:17:04: Success by http://127.0.0.1:8088
+2025-06-19T16:20:39: Success by http://127.0.0.1:8088
+2025-06-19T16:26:02: Success by http://127.0.0.1:8088
+2025-06-19T16:36:02: Success by http://127.0.0.1:8088
+2025-06-19T16:36:03: Success by http://127.0.0.1:8088
+2025-06-19T16:40:48: Success by http://127.0.0.1:8088
