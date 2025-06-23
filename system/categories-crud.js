@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../link.js');
+const { requireSuperAdmin, requireAdmin, requirePermission } = require('../middleware/auth.js');
 
 const sqlErr = {
     code: 500,
@@ -107,8 +108,8 @@ router.get('/categories/:id', (req, res) => {
     });
 });
 
-// 添加分类
-router.post('/categories', (req, res) => {
+// 添加分类 - 仅超级管理员可操作
+router.post('/categories', requireSuperAdmin, (req, res) => {
     const { name, sort_order = 0, status = 1 } = req.body;
     
     if (!name) {
@@ -139,8 +140,8 @@ router.post('/categories', (req, res) => {
     });
 });
 
-// 更新分类
-router.put('/categories/:id', (req, res) => {
+// 更新分类 - 仅超级管理员可操作
+router.put('/categories/:id', requireSuperAdmin, (req, res) => {
     const { id } = req.params;
     const { name, sort_order, status } = req.body;
     
@@ -177,8 +178,8 @@ router.put('/categories/:id', (req, res) => {
     });
 });
 
-// 删除分类
-router.delete('/categories/:id', (req, res) => {
+// 删除分类 - 仅超级管理员可操作
+router.delete('/categories/:id', requireSuperAdmin, (req, res) => {
     const { id } = req.params;
     
     // 检查是否有工具在使用此分类
@@ -208,8 +209,8 @@ router.delete('/categories/:id', (req, res) => {
     });
 });
 
-// 更新分类状态
-router.patch('/categories/:id/status', (req, res) => {
+// 更新分类状态 - 仅超级管理员可操作
+router.patch('/categories/:id/status', requireSuperAdmin, (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
     

@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../link.js');
 const md5 = require('../loginReg/enc.js');
 const jwt = require('jsonwebtoken');
+const { getUserPermissions } = require('../middleware/auth.js');
 
 const sqlErr = {
     code: 500,
@@ -179,5 +180,8 @@ router.put('/admin/password', (req, res) => {
         });
     });
 });
+
+// 获取用户权限信息
+router.get('/admin/permissions', getUserPermissions);
 
 module.exports = router; 

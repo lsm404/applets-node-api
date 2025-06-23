@@ -29,21 +29,30 @@ app.use(expressjwt({
         }
         return null;
     }
-}).unless({
-    path: [
-        // 公开的API路径（不需要认证）
-        /\/api\/tools/, 
-        /\/api\/categories/,
-        /\/api\/upload\/image$/,
-        /\/api\/upload\/images$/,
-        /\/api\/userLogin/,
-        /\/api\/userReg/,
-        /\/api\/admin\/login$/,
-        /\/images\//,
-        /\/uploads\//,
+}).unless(function(req) {
+    // 不需要认证的路径和方法组合
+    const publicPaths = [
+        // 查询接口（GET方法）- 无需认证
+        {path: /\/api\/tools/, method: 'GET'},
+        {path: /\/api\/tools\/search/, method: 'GET'},
+        {path: /\/api\/tools\/\d+/, method: 'GET'}, // GET单个工具详情
+        {path: /\/api\/categories/, method: 'GET'},
+        {path: /\/api\/categories\/options/, method: 'GET'},
         
-        // 可以添加其他不需要认证的路径
-    ]
+        // 其他公开接口
+        {path: /\/api\/upload\/image$/, method: 'POST'},
+        {path: /\/api\/upload\/images$/, method: 'POST'},
+        {path: /\/api\/userLogin/, method: 'POST'},
+        {path: /\/api\/userReg/, method: 'POST'},
+        {path: /\/api\/admin\/login$/, method: 'POST'},
+        {path: /\/images\//, method: 'GET'},
+        {path: /\/uploads\//, method: 'GET'},
+    ];
+    
+    // 检查当前请求是否匹配公开路径
+    return publicPaths.some(item => {
+        return item.path.test(req.url) && req.method === item.method;
+    });
 }))
 
 //托管静态资源

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../link.js');
+const { requireSuperAdmin, requireAdmin, requirePermission } = require('../middleware/auth.js');
 
 const sqlErr = {
     code: 500,
@@ -14,6 +15,39 @@ const respond = (res, code, msg, data = null) => {
         msg: msg,
         data: data
     });
+};
+
+// 图片URL处理函数 - 将IP地址格式转换为域名格式
+const processImageUrl = (iconPath) => {
+    if (!iconPath) return iconPath;
+    
+    // 将IP地址格式的URL转换为域名格式
+    // 匹配 http://120.46.28.146:9001 或 http://120.46.28.146:9000 等格式
+    const ipPattern = /^https?:\/\/120\.46\.28\.146(:\d+)?/;
+    
+    if (ipPattern.test(iconPath)) {
+        // 替换为域名格式，保持HTTPS协议
+        return iconPath.replace(ipPattern, 'https://www.jialeya.xyz');
+    }
+    
+    return iconPath;
+};
+
+// 处理工具数据 - 转换iconPath为域名格式
+const processToolData = (tool) => {
+    if (!tool) return tool;
+    
+    return {
+        ...tool,
+        iconPath: processImageUrl(tool.iconPath)
+    };
+};
+
+// 处理工具列表数据
+const processToolsList = (tools) => {
+    if (!Array.isArray(tools)) return tools;
+    
+    return tools.map(processToolData);
 };
 
 // 获取工具列表 (支持分页和搜索)
@@ -67,11 +101,12 @@ router.get('/tools', (req, res) => {
                 return res.send(sqlErr);
             }
             
-            // 返回带分页信息的数据
+            // 处理iconPath为域名格式，然后返回带分页信息的数据
+            const processedData = processToolsList(listResult);
             res.json({
                 code: 200,
                 msg: '获取成功',
-                data: listResult,
+                data: processedData,
                 count: total,
                 page: parseInt(page),
                 pageSize: parseInt(pageSize)
@@ -139,10 +174,12 @@ router.get('/tools/search', (req, res) => {
                 return res.send(sqlErr);
             }
             
+            // 处理搜索结果中的iconPath为域名格式
+            const processedSearchResult = processToolsList(searchResult);
             res.send({
                 code: 200,
                 msg: '搜索成功',
-                data: searchResult,
+                data: processedSearchResult,
                 count: total,
                 keyword: keyword,
                 page: parseInt(page),
@@ -167,12 +204,14 @@ router.get('/tools/:id', (req, res) => {
             return respond(res, 404, '工具不存在');
         }
         
-        respond(res, 200, '获取成功', result[0]);
+        // 处理单个工具的iconPath为域名格式
+        const processedTool = processToolData(result[0]);
+        respond(res, 200, '获取成功', processedTool);
     });
 });
 
-// 添加工具
-router.post('/tools', (req, res) => {
+// 添加工具 - 仅超级管理员可操作
+router.post('/tools', requireSuperAdmin, (req, res) => {
     const { title, size, desc, version, iconClass, iconPath, link, category = 0, status = 1 } = req.body;
     
     if (!title || !link) {
@@ -192,8 +231,8 @@ router.post('/tools', (req, res) => {
     });
 });
 
-// 更新工具
-router.put('/tools/:id', (req, res) => {
+// 更新工具 - 仅超级管理员可操作
+router.put('/tools/:id', requireSuperAdmin, (req, res) => {
     const { id } = req.params;
     const { title, size, desc, version, iconClass, iconPath, link, category, status } = req.body;
     
@@ -219,8 +258,8 @@ router.put('/tools/:id', (req, res) => {
     });
 });
 
-// 删除工具
-router.delete('/tools/:id', (req, res) => {
+// 删除工具 - 仅超级管理员可操作
+router.delete('/tools/:id', requireSuperAdmin, (req, res) => {
     const { id } = req.params;
     
     const sql = 'DELETE FROM tools WHERE id = ?';
@@ -238,8 +277,8 @@ router.delete('/tools/:id', (req, res) => {
     });
 });
 
-// 批量删除工具
-router.post('/tools/batch-delete', (req, res) => {
+// 批量删除工具 - 仅超级管理员可操作
+router.post('/tools/batch-delete', requireSuperAdmin, (req, res) => {
     const { ids } = req.body;
     
     if (!ids || !Array.isArray(ids) || ids.length === 0) {
@@ -259,8 +298,8 @@ router.post('/tools/batch-delete', (req, res) => {
     });
 });
 
-// 更新工具状态
-router.patch('/tools/:id/status', (req, res) => {
+// 更新工具状态 - 仅超级管理员可操作
+router.patch('/tools/:id/status', requireSuperAdmin, (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
     
