@@ -48,7 +48,7 @@ app.use(expressjwt({
         {path: /\/images\//, method: 'GET'},
         {path: /\/uploads\//, method: 'GET'},
     ];
-    
+        
     // 检查当前请求是否匹配公开路径
     return publicPaths.some(item => {
         return item.path.test(req.url) && req.method === item.method;
