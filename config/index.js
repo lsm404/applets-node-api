@@ -2,7 +2,7 @@
  * @Author: lishengmin shengminfang@foxmail.com
  * @Date: 2025-06-12 15:56:33
  * @LastEditors: lishengmin shengminfang@foxmail.com
- * @LastEditTime: 2025-06-16 16:13:42
+ * @LastEditTime: 2025-06-24 16:33:18
  * @FilePath: /applet/Api/config/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -42,15 +42,15 @@ const baseConfig = {
 const envConfigs = {
   development: {
     ...baseConfig,
-    baseUrl: 'http://120.46.28.146:9001', // 生产环境用线上
-    corsOrigin: ['http://120.46.28.146:9001'], // 生产前端地址
+    baseUrl: 'https://www.jialeya.xyz', // 生产环境用域名
+    corsOrigin: ['https://jialeya.xyz'], // 生产前端地址
     debug: false
   },
   
   production: {
     ...baseConfig,
-    baseUrl: 'http://120.46.28.146:8088', // 生产环境用线上
-    corsOrigin: ['http://120.46.28.146:8001'], // 生产前端地址
+    baseUrl: 'https://www.jialeya.xyz', // 生产环境用域名
+    corsOrigin: ['https://jialeya.xyz'], // 生产前端地址
     debug: false
   }
 };
