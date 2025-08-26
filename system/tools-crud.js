@@ -33,13 +33,31 @@ const processImageUrl = (iconPath) => {
     return iconPath;
 };
 
-// 处理工具数据 - 转换iconPath为域名格式
+// 处理工具数据 - 转换iconPath为域名格式，处理images字段
 const processToolData = (tool) => {
     if (!tool) return tool;
     
+    // 处理images字段，如果是JSON字符串则解析为数组
+    let images = null;
+    if (tool.images) {
+        try {
+            images = typeof tool.images === 'string' ? JSON.parse(tool.images) : tool.images;
+            // 确保是数组格式
+            if (!Array.isArray(images)) {
+                images = [];
+            }
+            // 处理每个图片URL为域名格式
+            images = images.map(url => processImageUrl(url));
+        } catch (err) {
+            console.error('解析images字段失败:', err);
+            images = [];
+        }
+    }
+    
     return {
         ...tool,
-        iconPath: processImageUrl(tool.iconPath)
+        iconPath: processImageUrl(tool.iconPath),
+        images: images
     };
 };
 
@@ -212,16 +230,22 @@ router.get('/tools/:id', (req, res) => {
 
 // 添加工具 - 仅超级管理员可操作
 router.post('/tools', requireSuperAdmin, (req, res) => {
-    const { title, size, desc, version, iconClass, iconPath, link, category = 0, status = 1 } = req.body;
+    const { title, size, desc, version, iconClass, iconPath, link, category = 0, status = 1, images } = req.body;
     
     if (!title || !link) {
         return respond(res, 400, '工具名称、描述和链接不能为空');
     }
     
-    const sql = `INSERT INTO tools (title, size, \`desc\`, version, iconClass, iconPath, link, category, status) 
-                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    // 处理images字段，确保是JSON格式
+    let imagesJson = null;
+    if (images && Array.isArray(images) && images.length > 0) {
+        imagesJson = JSON.stringify(images);
+    }
     
-    db.query(sql, [title, size, desc, version, iconClass, iconPath, link, category, status], (err, result) => {
+    const sql = `INSERT INTO tools (title, size, \`desc\`, version, iconClass, iconPath, images, link, category, status) 
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    
+    db.query(sql, [title, size, desc, version, iconClass, iconPath, imagesJson, link, category, status], (err, result) => {
         if (err) {
             console.error('添加工具失败:', err);
             return res.send(sqlErr);
@@ -234,17 +258,23 @@ router.post('/tools', requireSuperAdmin, (req, res) => {
 // 更新工具 - 仅超级管理员可操作
 router.put('/tools/:id', requireSuperAdmin, (req, res) => {
     const { id } = req.params;
-    const { title, size, desc, version, iconClass, iconPath, link, category, status } = req.body;
+    const { title, size, desc, version, iconClass, iconPath, link, category, status, images } = req.body;
     
     if (!title || !link) {
         return respond(res, 400, '工具名称、描述和链接不能为空');
     }
     
+    // 处理images字段，确保是JSON格式
+    let imagesJson = null;
+    if (images && Array.isArray(images) && images.length > 0) {
+        imagesJson = JSON.stringify(images);
+    }
+    
     const sql = `UPDATE tools SET title = ?, size = ?, \`desc\` = ?, version = ?, iconClass = ?, 
-                 iconPath = ?, link = ?, category = ?, status = ?, updateTime = CURRENT_TIMESTAMP 
+                 iconPath = ?, images = ?, link = ?, category = ?, status = ?, updateTime = CURRENT_TIMESTAMP 
                  WHERE id = ?`;
     
-    db.query(sql, [title, size, desc, version, iconClass, iconPath, link, category, status, id], (err, result) => {
+    db.query(sql, [title, size, desc, version, iconClass, iconPath, imagesJson, link, category, status, id], (err, result) => {
         if (err) {
             console.error('更新工具失败:', err);
             return res.send(sqlErr);
